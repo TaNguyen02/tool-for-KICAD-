@@ -1,6 +1,25 @@
 # Corresponding source code
 
-KiCad Part Finder 2.0.1 is provided under AGPL-3.0-or-later. Application source, tests and build instructions accompany the executable in `source/`. The unmodified easyeda2kicad 1.0.1 source is in `source/vendor/easyeda2kicad/`. Offline interactive viewer assets and their upstream notices are in `source/assets/viewer3d/`.
+KiCad Part Finder 4.1.0 is provided under AGPL-3.0-or-later. Application source, tests and build instructions accompany the executable in `source/`. The unmodified easyeda2kicad 1.0.1 source is in `source/vendor/easyeda2kicad/`. Offline interactive viewer assets and their upstream notices are in `source/assets/viewer3d/`. Reviewed exact-component pin facts and evidence are in `source/assets/pin_profiles.json`, with extension requirements in `source/assets/PIN_PROFILES.md`; their resolver source is `source/pin_profiles.py`. The universal electrical-type audit and explicit review are implemented in `source/electrical.py` and `source/pin_review_ui.py`. Manufacturer PDFs and KiCad symbol artwork are not bundled with those factual profiles.
+
+Version 4.1.0 adds `library_health.py`, `storage_recovery.py` and `maintenance_ui.py` for local managed-library checks, explicitly requested backed-up pin repair and evidence-checked registration recovery. `pin_types.py` handles unique installed references and bounded manufacturer-documented identities; `pin_profiles.py` validates exact full pin maps and reviewed per-pin spelling aliases. The representative 16-part audit left five source maps unresolved rather than inventing electrical roles. Existing user-edited or unowned CAD is not automatically rewritten. These application changes do not modify the bundled upstream converter, renderer or routing engine.
+
+The autorouting integration is included as `routing_runtime.py`, `routing_service.py`, `routing_ui.py`, `routing_smoke.py` and `assets/routing_worker.py`. KiCad's installed Python/pcbnew exports native DSN, imports SES and checks the board; KiCad itself is not bundled. Copper zones are rejected before DSN export because they can stall the current engine; they are never silently removed. Keepout rule areas remain supported. Users can add/fill copper zones and rerun DRC in KiCad after routing. The automatic placement implementation has been removed.
+
+`routing_context.py` prepares an isolated KiCad 10 library context for native DRC, resolves project/delegated table paths and preserves explicit library overrides. It reads the user's library configuration without changing it.
+
+## Freerouting 2.5.0 — independent external program
+
+The release includes the **unmodified official Windows x64 native CLI archive**, `freerouting-cli-2.5.0-windows-x64.zip`, in the runtime assets. Its first explicit setup verifies and installs it under the app's data directory. This is a separate GPL-3.0 program, not Altium source or a KiCad plugin. Java is not required to run this native package.
+
+- [Official release and binary](https://github.com/freerouting/freerouting/releases/tag/v2.5.0).
+- Bundled archive: **20,183,955 bytes**.
+- Archive SHA-256: `5750dc0bed261eefae29d79784301b478af978fd472407d77e01e85dbb794857`.
+- [Corresponding source archive, tag v2.5.0](https://github.com/freerouting/freerouting/archive/refs/tags/v2.5.0.zip).
+- [Versioned developer/build instructions](https://github.com/freerouting/freerouting/blob/v2.5.0/docs/developer.md) and [tagged build configuration](https://github.com/freerouting/freerouting/blob/v2.5.0/build.gradle). Building from source has different requirements from running the bundled native executable.
+- [Upstream license](https://github.com/freerouting/freerouting/blob/v2.5.0/LICENSE), also supplied as `LICENSES/FREEROUTING-GPL-3.0.txt`. Runtime attribution and provenance are in `source/assets/autorouter/SOURCE.md`.
+
+The complete upstream source is available without charge from the versioned link above; these directions accompany the object code. Freerouting and bundled upstream runtime components retain their copyrights, licenses and notices. This application does not modify the engine. The integration source and its tests accompany the app under AGPL-3.0-or-later.
 
 The executable includes unmodified PyMuPDF 1.26.7 and MuPDF 1.26.12 under AGPL-3.0. The Python wrapper source and package metadata are also in `source/vendor/`. Complete upstream source, including native build sources and instructions, is available without charge:
 

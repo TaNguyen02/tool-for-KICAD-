@@ -1,6 +1,14 @@
 # Third-party notices
 
-KiCad Part Finder 2.0.1 is distributed under GNU AGPL version 3 or later. Copyright (c) 2026 KiCad Part Finder contributors. See `LICENSE` for the full license text.
+KiCad Part Finder 4.1.0 is distributed under GNU AGPL version 3 or later. Copyright (c) 2026 KiCad Part Finder contributors. See `LICENSE` for the full license text.
+
+## Freerouting 2.5.0
+
+- [Project and contributors](https://github.com/freerouting/freerouting) and [official v2.5.0 release](https://github.com/freerouting/freerouting/releases/tag/v2.5.0).
+- License: GNU GPL version 3. The unmodified official Windows x64 native CLI archive is included as a separate runtime asset; Java is not required to run it.
+- The integration calls the external engine through native KiCad DSN/SES exchange. No Altium code is included, and the app does not install or require a KiCad autorouting plugin.
+- License: `LICENSES/FREEROUTING-GPL-3.0.txt`; archive provenance/checksum: `source/assets/autorouter/SOURCE.md`. Corresponding upstream source and build instructions are linked in [SOURCE_CODE.md](SOURCE_CODE.md).
+- Upstream runtime components keep their own included notices. Freerouting authorship remains with its contributors; this app does not claim authorship of its routing engine.
 
 ## easyeda2kicad 1.0.1
 
@@ -43,6 +51,8 @@ Build tool and bootloader, GPL version 2 or later with the bootloader exception.
 
 ## Data sources and trademarks
 
-KiCad, LCSC, EasyEDA, JLCPCB, Ollama, and Qwen are names of their respective projects/owners. This is an independent application, not an official product of those projects or organizations.
+KiCad, Freerouting, Altium, LCSC, EasyEDA, JLCPCB, Ollama, and Qwen are names of their respective projects/owners. This is an independent application, not an official product of those projects or organizations.
 
 Downloaded CAD, datasheets, product metadata and 3D models retain their source licenses and terms. Program licensing does not automatically relicense downloaded component data. Public search providers and manufacturer sites are external services rather than bundled dependencies; endpoint availability and access requirements may change.
+
+Reviewed pin-profile records include factual terminal mappings and references to documents authored by STMicroelectronics, Ai-Thinker, Texas Instruments and Advanced Monolithic Systems, plus KiCad ERC conventions. Source URLs, revisions and available file hashes are recorded in `source/assets/pin_profiles.json` and explained in `source/assets/PIN_PROFILES.md`. No manufacturer PDF or KiCad symbol artwork is bundled as part of those facts. Manufacturer names and component identifiers remain with their respective owners; the records do not imply endorsement or certify a design.

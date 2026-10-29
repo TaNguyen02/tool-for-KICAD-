@@ -1,1 +1,1 @@
-4946a2c0b2293befb86afc80b5db1dd19a459e218f8ed3a53b26b8caeb6455b5  KiCadPartFinder.exe
+6ef4b8e2c9e27c5c9269959d05fbc60d82b1a19b7f1d1a8d7457ea56089f4600  KiCadPartFinder.exe
